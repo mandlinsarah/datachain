@@ -57,7 +57,10 @@ class ModelStore:
         if "@" in fullname:
             name, version_str = fullname.split("@")
             if version_str.strip() != "":
-                version = int(version_str[1:])
+                try:
+                    version = int(version_str[1:])
+                except ValueError:
+                    logger.warning(f"Malformed version string: {version_str}")
 
         return name, version
 
@@ -76,3 +79,4 @@ class ModelStore:
         if val is None or not ModelStore.is_pydantic(val):
             return None
         return val
+
