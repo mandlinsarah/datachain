@@ -26,6 +26,15 @@ theme:
     - navigation.tabs
     - navigation.path
     - navigation.top
+<<<<<<<
+=======
+        python:
+          rendering:
+            show_submodules: no
+
+watch:
+  - src/datachain
+>>>>>>>
     - navigation.prune
     - navigation.footer
     - toc.follow
